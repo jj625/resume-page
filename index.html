@@ -1,5 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+
+<!-- <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.0/firebase-app.js";
+    import { getAuth, signInWithPopup, GoogleAuthProvider, GithubAuthProvider, OAuthProvider } from "https://www.gstatic.com/firebasejs/10.7.0/firebase-auth.js";
+  
+    const firebaseConfig = {
+      apiKey: "YOUR_API_KEY",
+      authDomain: "YOUR_PROJECT.firebaseapp.com",
+      projectId: "YOUR_PROJECT_ID",
+      storageBucket: "YOUR_PROJECT.appspot.com",
+      messagingSenderId: "YOUR_SENDER_ID",
+      appId: "YOUR_APP_ID"
+    };
+  
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+</script> -->
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,6 +35,29 @@
         <h1>My Resume</h1>
         <p>Details about your resume go here...</p>
     </div>
-    <script src="auth.js"></script>
+        <script type="module">
+            // Import the functions you need from the SDKs you need
+            import { initializeApp } from "https://www.gstatic.com/firebasejs/11.7.1/firebase-app.js";
+            import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.7.1/firebase-analytics.js";
+            // TODO: Add SDKs for Firebase products that you want to use
+            // https://firebase.google.com/docs/web/setup#available-libraries
+        
+            // Your web app's Firebase configuration
+            // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+            const firebaseConfig = {
+            apiKey: "AIzaSyApFnJn4_TYKqOTDdB3eT6IIHvdOifvrVw",
+            authDomain: "resumeauth-ea601.firebaseapp.com",
+            projectId: "resumeauth-ea601",
+            storageBucket: "resumeauth-ea601.firebasestorage.app",
+            messagingSenderId: "1034719732568",
+            appId: "1:1034719732568:web:9686210615f78073137b2d",
+            measurementId: "G-2PYG5E7EN8"
+            };
+        
+            // Initialize Firebase
+            const app = initializeApp(firebaseConfig);
+            const analytics = getAnalytics(app);
+        </script>
+        <script src="auth.js"></script>
 </body>
 </html>
