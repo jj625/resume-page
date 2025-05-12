@@ -34,30 +34,67 @@
     <div id="resume-container" style="display:none;">
         <h1>My Resume</h1>
         <p>Details about your resume go here...</p>
+        <p>(version 2)</p>
     </div>
-        <script type="module">
-            // Import the functions you need from the SDKs you need
-            import { initializeApp } from "https://www.gstatic.com/firebasejs/11.7.1/firebase-app.js";
-            import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.7.1/firebase-analytics.js";
-            // TODO: Add SDKs for Firebase products that you want to use
-            // https://firebase.google.com/docs/web/setup#available-libraries
-        
-            // Your web app's Firebase configuration
-            // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-            const firebaseConfig = {
-            apiKey: "AIzaSyApFnJn4_TYKqOTDdB3eT6IIHvdOifvrVw",
-            authDomain: "resumeauth-ea601.firebaseapp.com",
-            projectId: "resumeauth-ea601",
-            storageBucket: "resumeauth-ea601.firebasestorage.app",
-            messagingSenderId: "1034719732568",
-            appId: "1:1034719732568:web:9686210615f78073137b2d",
-            measurementId: "G-2PYG5E7EN8"
-            };
-        
-            // Initialize Firebase
-            const app = initializeApp(firebaseConfig);
-            const analytics = getAnalytics(app);
-        </script>
-        <script src="auth.js"></script>
+
+    <!-- Firebase SDK & Authentication -->
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.7.1/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.7.1/firebase-analytics.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+    
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+        apiKey: "AIzaSyApFnJn4_TYKqOTDdB3eT6IIHvdOifvrVw",
+        authDomain: "resumeauth-ea601.firebaseapp.com",
+        projectId: "resumeauth-ea601",
+        storageBucket: "resumeauth-ea601.firebasestorage.app",
+        messagingSenderId: "1034719732568",
+        appId: "1:1034719732568:web:9686210615f78073137b2d",
+        measurementId: "G-2PYG5E7EN8"
+        };
+    
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+
+        // Authentication Handlers
+        const googleProvider = new GoogleAuthProvider();
+        const githubProvider = new GithubAuthProvider();
+        const appleProvider = new OAuthProvider('apple.com');
+
+        document.getElementById('google-sign-in').addEventListener('click', () => {
+            signInWithPopup(auth, googleProvider).then((result) => {
+                document.getElementById('auth-container').style.display = 'none';
+                document.getElementById('resume-container').style.display = 'block';
+            }).catch((error) => {
+                console.error("Error signing in:", error);
+            });
+        });
+
+      document.getElementById('github-sign-in').addEventListener('click', () => {
+          signInWithPopup(auth, githubProvider).then((result) => {
+              document.getElementById('auth-container').style.display = 'none';
+              document.getElementById('resume-container').style.display = 'block';
+          }).catch((error) => {
+              console.error("Error signing in:", error);
+          });
+      });
+
+      document.getElementById('apple-sign-in').addEventListener('click', () => {
+          signInWithPopup(auth, appleProvider).then((result) => {
+              document.getElementById('auth-container').style.display = 'none';
+              document.getElementById('resume-container').style.display = 'block';
+          }).catch((error) => {
+              console.error("Error signing in:", error);
+          });
+      });
+
+
+</script>
+    <!-- <script src="auth.js"></script> -->
 </body>
 </html>
