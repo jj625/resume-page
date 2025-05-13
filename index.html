@@ -80,14 +80,14 @@
             });
         });
 
-      document.getElementById('github-sign-in').addEventListener('click', () => {
-          signInWithPopup(auth, githubProvider).then((result) => {
-              document.getElementById('auth-container').style.display = 'none';
-              document.getElementById('resume-container').style.display = 'block';
-          }).catch((error) => {
-              console.error("Error signing in:", error);
-          });
-      });
+    //   document.getElementById('github-sign-in').addEventListener('click', () => {
+    //       signInWithPopup(auth, githubProvider).then((result) => {
+    //           document.getElementById('auth-container').style.display = 'none';
+    //           document.getElementById('resume-container').style.display = 'block';
+    //       }).catch((error) => {
+    //           console.error("Error signing in:", error);
+    //       });
+    //   });
 
     //   document.getElementById('apple-sign-in').addEventListener('click', () => {
     //       signInWithPopup(auth, appleProvider).then((result) => {
